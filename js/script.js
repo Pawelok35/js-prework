@@ -29,14 +29,15 @@ printMessage('Twój ruch to: ' + playerMove);
 
 if( computerMove == 'kamień' && playerMove == 'papier'){ 
     printMessage('Ty wygrywasz!');
-  }else if(computerMove == playerMove){ 
-  printMessage('Remis!');
   }else if( computerMove == 'papier' && playerMove == 'nożyce'){ 
     printMessage('Ty wygrywasz!'); 
   }else if( computerMove == 'nożyce' && playerMove == 'kamień'){ 
     printMessage('Ty wygrywasz!'); 
   }else if(playerMove == 'nieznany ruch'){ 
     printMessage('Wpisz poprawną opcję spośród: 1, 2, 3');
+  }else if(computerMove == playerMove){ 
+    printMessage('Remis!');
   }else {
     printMessage('Ty przegrywasz!');
   }
+  
