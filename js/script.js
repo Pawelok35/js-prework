@@ -45,5 +45,6 @@ function playGame() {
     }
   }
   displayResult(computerMove, playerMove);
-}
+};
+
 
