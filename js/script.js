@@ -1,12 +1,16 @@
 let playerScore = 0;
 let computerScore = 0;
+let gameOver = false;
+
 function updateScore() {
     document.getElementById('player-score').innerHTML = playerScore;
     document.getElementById('computer-score').innerHTML = computerScore;
 }
-console.log(playerScore);
-console.log(computerScore);
+
 function playGame(playerInput) {
+    if (gameOver){
+        return;
+    }
     clearMessages();
 
   function getMoveName(argMoveId) {
@@ -36,13 +40,28 @@ function playGame(playerInput) {
     );
     if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
       printMessage('Ty wygrywasz!');
-      playerScore++;
+      playerScore++; 
+      if (playerScore == 10){
+        printMessage('GRATULACJE WYGRAŁEŚ')
+        gameOver = true;
+        document.getElementById('reset-game-button').style.display = 'block';
+      }
     } else if (argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
       printMessage('Ty wygrywasz!');
       playerScore++;
+      if (playerScore == 10){
+        printMessage('GRATULACJE WYGRAŁEŚ')
+        gameOver = true;
+        document.getElementById('reset-game-button').style.display = 'block';
+      }
     } else if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
       printMessage('Ty wygrywasz!');
       playerScore++;
+      if (playerScore == 10){
+        printMessage('GRATULACJE WYGRAŁEŚ')
+        gameOver = true;
+        document.getElementById('reset-game-button').style.display = 'block';
+      }
     } else if (argPlayerMove == 'nieznany ruch') {
       printMessage('Wpisz poprawną opcję spośród: 1, 2, 3');
     } else if (argComputerMove == argPlayerMove) {
@@ -50,6 +69,11 @@ function playGame(playerInput) {
     } else {
       printMessage('Ty przegrywasz!');
       computerScore++;
+      if (computerScore == 10){
+        printMessage('NIESTETY PRZEGRAŁEŚ - NASTĘPNYM RAZEM BĘDZIE LEPIEJ!')
+        gameOver = true;
+        document.getElementById('reset-game-button').style.display = 'block';
+      }
     }
     updateScore();
   }
@@ -70,6 +94,13 @@ document.getElementById('reset-button').addEventListener('click', function(){
     updateScore();
     clearMessages();
 });
-
+document.getElementById('reset-game-button').addEventListener('click', function(){
+    playerScore = 0;
+    computerScore = 0;
+    gameOver = false;
+    updateScore();
+    clearMessages();
+    document.getElementById('reset-game-button').style.display = 'block';
+});
 
  
