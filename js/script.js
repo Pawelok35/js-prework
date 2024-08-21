@@ -1,6 +1,12 @@
+let playerScore = 0;
+let computerScore = 0;
+function updateScore() {
+    document.getElementById('player-score').innerText = playerScore;
+    document.getElementById('computer-score').innerHTML = computerScore;
+}
+console.log(playerScore);
+console.log(computerScore);
 function playGame(playerInput) {
-   
-    
     clearMessages();
 
   function getMoveName(argMoveId) {
@@ -16,40 +22,39 @@ function playGame(playerInput) {
   }
 
   let randomNumber = Math.floor(Math.random() * 3 + 1);
-
   console.log('Wylosowana liczba to: ' + randomNumber);
 
   let computerMove = getMoveName(randomNumber);
-
-  //let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3:nożyce');
-
   console.log('Gracz wpisał: ' + playerInput);
 
-  let playerMove = getMoveName(playerInput);
+  let playerMove = getMoveName(playerInput);      // zmienna playerMove przechowuje wynik działania funkcji getMoveName
 
   function displayResult(argComputerMove, argPlayerMove) {
     console.log('Moves:', argComputerMove, ' - ', argPlayerMove);
     printMessage(
       'Mój ruch to ' + argComputerMove + ', Twój ruch to ' + argPlayerMove
     );
-
     if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
       printMessage('Ty wygrywasz!');
+      playerScore;
     } else if (argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
       printMessage('Ty wygrywasz!');
+      playerScore;
     } else if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
       printMessage('Ty wygrywasz!');
+      playerScore;
     } else if (argPlayerMove == 'nieznany ruch') {
       printMessage('Wpisz poprawną opcję spośród: 1, 2, 3');
     } else if (argComputerMove == argPlayerMove) {
       printMessage('Remis!');
     } else {
       printMessage('Ty przegrywasz!');
+      computerScore++;
     }
+    updateScore();
   }
   displayResult(computerMove, playerMove);
 };
-
 document.getElementById('play-rock').addEventListener('click', function(){
     playGame(1);
   });
@@ -61,3 +66,5 @@ document.getElementById('play-scissors').addEventListener('click', function(){
   });
 
 
+  console.log(playerScore);
+  console.log(computerScore);
