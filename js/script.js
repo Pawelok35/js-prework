@@ -1,7 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
 function updateScore() {
-    document.getElementById('player-score').innerText = playerScore;
+    document.getElementById('player-score').innerHTML = playerScore;
     document.getElementById('computer-score').innerHTML = computerScore;
 }
 console.log(playerScore);
@@ -36,13 +36,13 @@ function playGame(playerInput) {
     );
     if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
       printMessage('Ty wygrywasz!');
-      playerScore;
+      playerScore++;
     } else if (argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
       printMessage('Ty wygrywasz!');
-      playerScore;
+      playerScore++;
     } else if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
       printMessage('Ty wygrywasz!');
-      playerScore;
+      playerScore++;
     } else if (argPlayerMove == 'nieznany ruch') {
       printMessage('Wpisz poprawną opcję spośród: 1, 2, 3');
     } else if (argComputerMove == argPlayerMove) {
@@ -69,7 +69,7 @@ document.getElementById('reset-button').addEventListener('click', function(){
     computerScore = 0;
     updateScore();
     clearMessages();
-});e
+});
 
 
  
