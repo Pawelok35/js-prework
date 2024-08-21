@@ -6,20 +6,24 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="container">
+	
+
+    <div class="container">
+        <div class="image-container">
+            <img src="https://i.imgur.com/DV2w3ke.jpg" alt="papper rock scissors">
+        </div>
 		<div id="buttons">
             <button id="play-rock" type="button" >Kamień</button>
 			<button id="play-paper" type="button" >Papier</button>
 			<button id="play-scissors" type="button">Nożyce</button>
         </div>
         <div id="scores">
-            <h3>WYNIK GRY</h3>
-            <p>Wynik Gracza: <span id="player-score">0</span></p>
-            <p>Wynik Komputera: <span id="computer-score">0</span></p>
+            <p>Twoje punkty: <span id="player-score">0</span></p>
+            <p>Punkty komputera: <span id="computer-score">0</span></p>
         </div>
 		<div id="messages"></div>
         <button id="reset-button" type="button">RESETUJ GRĘ</button>
-        <button id="reset-game-button" type="button" style="display: none;">ZAGRAJMY JESZCZE RAZ</button>
+        <button id="reset-game-button" type="button" >ZAGRAJMY JESZCZE RAZ</button>
 	</div>
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>

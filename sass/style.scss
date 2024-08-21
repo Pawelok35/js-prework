@@ -1,0 +1,37 @@
+#reset-game-button {
+    display: none;
+  }
+
+#scores {
+    display: flex;
+  justify-content: space-around; 
+  align-items: center; 
+}
+
+#scores h3 {
+    margin: 0; 
+  }
+  
+  #scores p {
+    margin: 0 10px; 
+  }
+
+  body {
+    background-color: rgb(113, 180, 225);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  
+  .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
