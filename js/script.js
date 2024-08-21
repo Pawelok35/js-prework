@@ -64,7 +64,12 @@ document.getElementById('play-paper').addEventListener('click', function(){
 document.getElementById('play-scissors').addEventListener('click', function(){
     playGame(3);
   });
+document.getElementById('reset-button').addEventListener('click', function(){
+    playerScore = 0;
+    computerScore = 0;
+    updateScore();
+    clearMessages();
+});e
 
 
-  console.log(playerScore);
-  console.log(computerScore);
+ 
